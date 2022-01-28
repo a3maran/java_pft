@@ -3,9 +3,9 @@ package ru.stqa.pft.sandbox;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static ru.stqa.pft.sandbox.MyFirstProgramm.distance;
+import static ru.stqa.pft.sandbox.Point.distance;
 
-public class SquareTests {
+public class DistanceTests {
     @Test
     public void testDistance()
     {
