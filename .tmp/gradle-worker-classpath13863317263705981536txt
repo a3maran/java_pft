@@ -1,0 +1,6 @@
+-cp
+C:\\dev\\java_pft\\caches\\7.3.3\\workerMain\\gradle-worker.jar;C:\\dev\\java_pft\\sandbox\\build\\classes\\java\\test;C:\\dev\\java_pft\\sandbox\\build\\classes\\java\\main;C:\\dev\\java_pft\\caches\\modules-2\\files-2.1\\org.testng\\testng\\7.5\\1416a607fae667c14e390b484e8d02b5824c0674\\testng-7.5.jar;C:\\dev\\java_pft\\caches\\modules-2\\files-2.1\\com.google.code.findbugs\\jsr305\\3.0.1\\f7be08ec23c21485b9b5a1cf1654c2ec8c58168d\\jsr305-3.0.1.jar;C:\\dev\\java_pft\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-api\\1.7.32\\cdcff33940d9f2de763bc41ea05a0be5941176c3\\slf4j-api-1.7.32.jar;C:\\dev\\java_pft\\caches\\modules-2\\files-2.1\\com.beust\\jcommander\\1.78\\a3927de9bd6f351429bcf763712c9890629d8f51\\jcommander-1.78.jar;C:\\dev\\java_pft\\caches\\modules-2\\files-2.1\\org.webjars\\jquery\\3.5.1\\2392938e374f561c27c53872bdc9b6b351b6ba34\\jquery-3.5.1.jar
+--add-opens
+java.base/java.util=ALL-UNNAMED
+--add-opens
+java.base/java.lang=ALL-UNNAMED
