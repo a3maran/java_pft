@@ -18,3 +18,4 @@ wrapper/
 daemon/
 native/
 out/
+.tmp
