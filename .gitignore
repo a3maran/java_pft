@@ -19,3 +19,4 @@ daemon/
 native/
 out/
 .tmp
+.idea/codeStyles/codeStyleConfig.xml

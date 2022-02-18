@@ -11,7 +11,7 @@ public class GpoupHelper extends HelperBase {
     }
 
     public void returnToGroupPage() {
-      wd.findElement(By.linkText("group page")).click();
+        wd.findElement(By.linkText("group page")).click();
     }
 
     public void submitGroupCreation() {
@@ -29,11 +29,11 @@ public class GpoupHelper extends HelperBase {
     }
 
     public void deleteSelectedGroups() {
-        click(By.id("delete"));
+        click(By.xpath("//input[@name='delete']"));
     }
 
     public void selectGroup() {
-        click(By.id("selected[]"));
+        click(By.xpath("//input[@name='selected[]']"));
     }
 
 
