@@ -6,16 +6,16 @@ import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-    public final ApplicationManager app = new ApplicationManager();
+  public final ApplicationManager app = new ApplicationManager();
 
-    @BeforeMethod
-    public void setUp() throws Exception {
-        app.init();
-    }
+  @BeforeMethod
+  public void setUp() throws Exception {
+    app.init();
+  }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() throws Exception {
-        app.stop();
-    }
+  @AfterMethod(alwaysRun = true)
+  public void tearDown() throws Exception {
+    app.stop();
+  }
 
 }

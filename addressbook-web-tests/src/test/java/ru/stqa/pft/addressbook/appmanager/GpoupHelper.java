@@ -6,35 +6,42 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 public class GpoupHelper extends HelperBase {
 
-    public GpoupHelper(WebDriver wd) {
-        super(wd);
-    }
+  public GpoupHelper(WebDriver wd) {
+    super(wd);
+  }
 
-    public void returnToGroupPage() {
-        wd.findElement(By.linkText("group page")).click();
-    }
+  public void returnToGroupPage() {
+    wd.findElement(By.linkText("group page")).click();
+  }
 
-    public void submitGroupCreation() {
-        click(By.xpath("//input[@name='submit']"));
-    }
+  public void submitGroupCreation() {
+    click(By.xpath("//input[@name='submit']"));
+  }
 
-    public void fillGroupForm(GroupData groupData) {
-        type(By.name("group_name"), groupData.name());
-        type(By.name("group_header"), groupData.header());
-        type(By.name("group_footer"), groupData.footer());
-    }
+  public void fillGroupForm(GroupData groupData) {
+    type(By.name("group_name"), groupData.name());
+    type(By.name("group_header"), groupData.header());
+    type(By.name("group_footer"), groupData.footer());
+  }
 
-    public void initGroupCreation() {
-        click(By.xpath("//input[@name='new']"));
-    }
+  public void initGroupCreation() {
+    click(By.xpath("//input[@name='new']"));
+  }
 
-    public void deleteSelectedGroups() {
-        click(By.xpath("//input[@name='delete']"));
-    }
+  public void deleteSelectedGroups() {
+    click(By.xpath("//input[@name='delete']"));
+  }
 
-    public void selectGroup() {
-        click(By.xpath("//input[@name='selected[]']"));
-    }
+  public void selectGroup() {
+    click(By.xpath("//input[@name='selected[]']"));
+  }
 
 
+  public void ininGroupModification() {
+    click(By.xpath("//input[@name='edit']"));
+  }
+
+  public void submitGroupModification() {
+    click(By.xpath("//input[@name='update']"));
+  }
 }
