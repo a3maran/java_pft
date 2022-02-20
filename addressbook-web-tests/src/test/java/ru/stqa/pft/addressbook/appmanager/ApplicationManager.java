@@ -36,7 +36,7 @@ public class ApplicationManager {
       wd = new ChromeDriver();
     }
     /* wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); */
-    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wd.get("http://localhost/addressbook/group.php");
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");

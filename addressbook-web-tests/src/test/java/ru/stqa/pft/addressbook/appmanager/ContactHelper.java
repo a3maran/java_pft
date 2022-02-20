@@ -2,6 +2,8 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase {
@@ -10,13 +12,18 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
-  public void fillContactForm(ContactData contactData) {
-    type(By.name("firstname"), contactData.firstname());
-    type(By.name("lastname"), contactData.lastname());
-    type(By.name("address"), contactData.address());
-    type(By.name("email"), contactData.email());
-    click(By.xpath("//input[21]"));
+  public void fillContactForm(ContactData contactData, boolean creation) {
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("email"), contactData.getEmail());
+    if (creation) { //если это создание контакта, то
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup()); //выбор элемента из выпадающего списка
+    } else { //иначе, это модификация и поля выбора группы нет
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
   }
+
 
   public void initAddNewContact() {
     click(By.linkText("add new"));
@@ -40,5 +47,21 @@ public class ContactHelper extends HelperBase {
 
   public void initContactModification() {
     click(By.xpath("//table[@id='maintable']/tbody/tr[5]/td[8]/a/img"));
+  }
+
+  public void submitContactCreation() {
+    click(By.xpath("//input[21]"));
+  }
+
+
+  public void createContact(ContactData contact) {
+    initAddNewContact();
+    fillContactForm(contact, true);
+    submitContactCreation();
+    returnToHomePage();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//input[@id='1']"));
   }
 }

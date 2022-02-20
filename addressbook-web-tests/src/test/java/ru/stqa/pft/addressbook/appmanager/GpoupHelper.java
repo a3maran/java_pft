@@ -19,9 +19,9 @@ public class GpoupHelper extends HelperBase {
   }
 
   public void fillGroupForm(GroupData groupData) {
-    type(By.name("group_name"), groupData.name());
-    type(By.name("group_header"), groupData.header());
-    type(By.name("group_footer"), groupData.footer());
+    type(By.name("group_name"), groupData.getName());
+    type(By.name("group_header"), groupData.getHeader());
+    type(By.name("group_footer"), groupData.getFooter());
   }
 
   public void initGroupCreation() {
@@ -43,5 +43,16 @@ public class GpoupHelper extends HelperBase {
 
   public void submitGroupModification() {
     click(By.xpath("//input[@name='update']"));
+  }
+
+  public void createGroup(GroupData group) {
+    initGroupCreation();
+    fillGroupForm(group);
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
+  public boolean isThereAGroup() {
+    return isElementPresent(By.xpath("//input[@name='selected[]']"));
   }
 }
