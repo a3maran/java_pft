@@ -34,7 +34,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact() {
-    click(By.xpath("//input[@id='1']"));
+    click(By.xpath("//input[@type ='checkbox']"));
   }
 
   public void deletContact() {
@@ -46,7 +46,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void initContactModification() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[5]/td[8]/a/img"));
+    click(By.xpath("//table[@id='maintable']/tbody/tr/td/a/img"));
   }
 
   public void submitContactCreation() {
@@ -62,6 +62,6 @@ public class ContactHelper extends HelperBase {
   }
 
   public boolean isThereAContact() {
-    return isElementPresent(By.xpath("//input[@id='1']"));
+    return isElementPresent(By.xpath("//input[@type ='checkbox']"));
   }
 }
