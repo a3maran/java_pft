@@ -32,7 +32,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact() {
-    click(By.xpath("//input[@type ='checkbox']"));
+    click(By.xpath("//td/input[@type ='checkbox']"));
   }
 
   public void deletContact() {
@@ -60,6 +60,6 @@ public class ContactHelper extends HelperBase {
   }
 
   public boolean isThereAContact() {
-    return isElementPresent(By.xpath("//input[@type ='checkbox']"));
+    return isElementPresent(By.xpath("//td/input[@type ='checkbox']"));
   }
 }
